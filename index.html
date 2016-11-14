@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, user-scalable=no">
+</head>
+<script src="js/sea.js"></script>
+<script src="js/lib/seajs-css.js"></script>
+<script src="js/lib/seajs-preload.js"></script>
+<script src="js/lib/zepto.js"></script>
+<script src="js/lib/zeptoWithFxTouch.js"></script>
+<script src="js/lib/underscore.js"></script>
+<script src="js/lib/backbone.js"></script>
+<style>
+	#list{
+		display: none;
+	}
+</style>
+<body>
+<div id="header">
+	<section id="list" class="list">
+		<header class="navbar">
+			<div class="back"><span></span><span></span></div>
+			<div class="login">登录</div>
+			<h1>季海波的图片网</h1>
+		</header>
+		<div class="search">
+			<input type="text" class="search-input" placeholder="搜索你想要的图片">
+			<span class="search-click">搜一搜</span>
+		</div>
+		<ul class="nav clearfix">
+			<li data-id="0">摄影</li>
+			<li data-id="1">明星</li>
+			<li data-id="2">壁纸</li>
+			<li data-id="3">宠物</li>
+			<li data-id="4">动漫</li>
+			<li data-id="5">风景</li>
+			<li data-id="6">头像</li>
+			<li data-id="7">人物</li>
+		</ul>
+		<div class="image-list">
+			<div class="left-list"></div>
+			<div class="right-list"></div>
+		</div>
+		<div class="go-top">返回顶部</div>
+
+	</section>
+	<section id="layer" class="layer"></section>
+	
+	<script type="text/template" id="layer_tpl">
+	<div class="img-container" style="<%=styles%>">
+		<img src="<%=url%>" alt="">
+	</div>
+	<header class="navbar hide">
+		<div href="#" class="back"><span class="arrow"></span><span class="arrow green"></span></div>
+		<h1><%=title%></h1>
+	</header>
+</script>
+</div>
+<script>
+seajs.config({
+	//preload:["lib/zeptoWithFx","lib/underscore","lib/backbone"]
+
+})
+	seajs.use("app",function(app){
+		app();
+	});
+	
+</script>
+</body>
+</html>
